@@ -46,10 +46,27 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
     </dependency>
+    <!--  Step 4, inclusion of Jetty server -->
+    
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<!--  Also excluded the use of a default Tomcat server -->
+      		<groupId>org.springframework.boot</groupId>
+      		<artifactId>spring-boot-starter-tomcat</artifactId>
+      	</exclusion>
+      </exclusions>
     </dependency>
+    
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jetty</artifactId>
+     </dependency>
+    
+    <!--  Step 4 end -->
+    
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-validation</artifactId>
